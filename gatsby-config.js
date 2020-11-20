@@ -6,8 +6,8 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Travelers\' blog',
-    description: 'Driving around Andalucia blog!'  
+    title: 'Driving around Andalucia',
+    description: 'Blog about family driving around Andalucia!'  
   },
   /* Your site config here */
   plugins: [
@@ -25,7 +25,17 @@ module.exports = {
         path: `${__dirname}/src/blog/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat`,
+        ],
+        display: 'swap'
+      }
+    },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`
   ],
 }

@@ -6,11 +6,11 @@
   
   body {
     background: #f1f1f1;
-    margin: 2rem;
+    //margin: 2rem;
   }
   
   $color_white: #fff;
-  $color_prime: #5ad67d;
+  $color_prime: indianred;
   $color_grey: #e2e2e2;
   $color_grey_dark: #a2a2a2;
   
@@ -48,6 +48,7 @@
       right: 0;
       bottom: 0;
       left: 0;
+      background-image: url('../images/newandalucia.jpg');
       background-size: cover;
       background-position: center;
       transition: transform .2s;
@@ -77,31 +78,27 @@
       ul li {
         display: inline-block;
       }
-      .author:before {
-        font-family: FontAwesome;
+      .author {
+        display: flex;
+        align-items: center;
+        width: 100%;
         margin-right: 10px;
-        content: "\f007";
       }
   
-      .date:before {
-        font-family: FontAwesome;
+      .date {
+        display: flex;
+        align-items: center;
+        width: 100%;
         margin-right: 10px;
-        content: "\f133";
       }
   
       .tags {
-        ul:before {
-          font-family: FontAwesome;
-          content: "\f02b";
-          margin-right: 10px;
-        }
-        li {
-          margin-right: 2px;
-          &:first-child {
-            margin-left: -4px;
-          }
-        }
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-right: 10px;
       }
+      
     }
     .description {
       padding: 1rem;
@@ -110,7 +107,7 @@
       z-index: 1;
       h1,
       h2 {
-        font-family: Poppins, sans-serif;
+        font-family: Montserrat, sans-serif;
       }
       h1 {
         line-height: 1;

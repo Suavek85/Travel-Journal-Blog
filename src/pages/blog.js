@@ -7,7 +7,7 @@ export default function Blog({ data }) {
 
   return (
     <div>
-      <h1>My blog posts</h1>
+      <h1 style={{ textAlign: 'center', color: 'indianred', fontFamily: 'Montserrat, sans-serif', marginTop: '35px' }}>Recent travels...</h1>
       {posts.map((post, index) => (
         <article key={post.id}>
           <BlogPostPreview 
@@ -16,6 +16,7 @@ export default function Blog({ data }) {
             date={ post.frontmatter.date }
             author={ post.frontmatter.author }
             excerpt={ post.excerpt }
+            place={post.frontmatter.place}
             id={index}
           />
         </article>
@@ -35,6 +36,7 @@ export const pageQuery = graphql`
           date(fromNow: true)
           title
           author
+          place
         }
         excerpt
         id

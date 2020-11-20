@@ -1,7 +1,8 @@
 ---
 title: Awesome Blog Post Title
 author: Suavek
-date: 2020-07-15
+date: 2020-07-22
+place: Marbella, San Pedro
 ---
 
 ## Introduction to my blog post

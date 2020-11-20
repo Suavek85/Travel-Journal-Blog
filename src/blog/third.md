@@ -1,8 +1,8 @@
 ---
 title: Awesome Blog Post Title
 author: Suavek
-date: 2020-07-15
-place: Manilva
+date: 2020-08-15
+place: Malaga
 ---
 
 ## Introduction to my blog post
