@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill'
 import { DateRange } from '@styled-icons/material/DateRange'
 import { Place } from '@styled-icons/material-rounded/Place'
+import "./PostPreview.scss"
 
-import "./blog-post-preview.scss"
-
-export default function BlogPostPreview(props) {
+export default function PostPreview(props) {
 
   const isEven = (n) => (n + 1) % 2 == 0;
 

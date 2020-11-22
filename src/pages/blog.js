@@ -1,16 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import BlogPostPreview from '../templates/blog-post-preview'
+import PostHeader from "../components/PostHeader/PostHeader"
+import PostPreview from '../components/PostPreview/PostPreview'
 
 export default function Blog({ data }) {
+
   const { posts } = data.blog
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center', color: 'indianred', fontFamily: 'Montserrat, sans-serif', marginTop: '35px' }}>Recent travels...</h1>
+      <PostHeader />
       {posts.map((post, index) => (
         <article key={post.id}>
-          <BlogPostPreview 
+          <PostPreview 
             slug={ post.fields.slug } 
             title={ post.frontmatter.title } 
             date={ post.frontmatter.date }

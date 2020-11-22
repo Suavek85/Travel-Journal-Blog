@@ -1,36 +1,26 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
+import getHeaderData from "../helpers/getHeaderData"
 import Blog from "./blog"
-import styles from "./index.module.scss"
-import TopMenuItem from "../components/TopMenuItem"
+import Header from "../components/Header/Header"
+import Menu from "../components/Menu/Menu"
+
+// TODO:
+// create a blog page
+// gatsby-remark-reading-time
+// add logic to 2-3 digit numbers
+// add icon to Read More
+// data: add landmarks, 
+// add days from first blog to last
 
 export default function Home({ data }) {
 
-  const { posts } = data.blog
-
-  const placesArr = posts && posts.map(el => {
-      const { place } = el.frontmatter;
-      if (place && place.includes(',')) return place.split(', ');
-      return place;
-  });
-
-  const uniquePlacesArr = [...new Set(placesArr.flat())];
-
-  const menuElements = [ 
-    {  nmbr: uniquePlacesArr.length, name: 'Places' }, 
-    {  nmbr: 1, name: "Landmarks" },
-    {  nmbr: '1d', name: "Time" },
-  ]
+  const headerData = getHeaderData(data)
 
   return (
     <div>
-      <div className={ styles.topmenu }>
-        { menuElements.map(el => <TopMenuItem posts={ el.nmbr } IconItem={ el.icon } name={ el.name } />) }
-        <Link style={{textDecoration: 'none', color: 'grey'}} to="/blog">Read my blog</Link>
-      </div>
-      <div className={ styles.header } style={{ width: '100%', height: '400px'}} >
-        <h1 style={{ textAlign: 'center' }}>Driving around<br></br>Andalucia</h1>
-      </div>
+      <Menu headerData={ headerData } />
+      <Header />
       <Blog data={ data } />
     </div>
   )

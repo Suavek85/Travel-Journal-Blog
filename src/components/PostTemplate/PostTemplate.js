@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-export default function BlogPost({ data }) {
+export default function PostTemplate({ data }) {
   const post = data.markdownRemark
 
   return (

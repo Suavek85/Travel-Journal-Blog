@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background:  url('../images//newandalucia.jpg');
+    background:  url('../../images/newandalucia.jpg');
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
 
@@ -12,13 +12,4 @@
         font-size: 80px;
         font-weight: 900;
     }
-}
-
-.topmenu {
-    display: flex;
-    height: 60px;
-    margin-bottom: 20px;
-    align-items: center;
-    justify-content: space-between;
-    color: dimgray;
 }

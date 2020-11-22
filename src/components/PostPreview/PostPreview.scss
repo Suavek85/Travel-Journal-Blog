@@ -6,7 +6,6 @@
   
   body {
     background: #f1f1f1;
-    //margin: 2rem;
   }
   
   $color_white: #fff;
@@ -48,7 +47,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: url('../images/newandalucia.jpg');
+      background-image: url('../../images/newandalucia.jpg');
       background-size: cover;
       background-position: center;
       transition: transform .2s;

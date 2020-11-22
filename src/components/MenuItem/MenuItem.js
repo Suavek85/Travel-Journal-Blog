@@ -1,7 +1,7 @@
 import React from "react"
-import styles from './TopMenuItem.module.scss'
+import styles from './MenuItem.module.scss'
 
-export default function TopMenuItem(props) {
+export default function MenuItem(props) {
     return (
         <div className={ styles.topmenuitem }>
           <p className={ styles.topmenutext }>{ props.name }</p>
