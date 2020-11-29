@@ -11,15 +11,18 @@ export default function Blog({ data }) {
     <div>
       <PostHeader />
       {posts.map((post, index) => (
-        <article key={post.id}>
+        <article key={ post.id }>
           <PostPreview 
             slug={ post.fields.slug } 
-            title={ post.frontmatter.title } 
+            reading={ post.fields.readingTime.text } 
+            title={ post.frontmatter.title }
+            subtitle={ post.frontmatter.subtitle }
             date={ post.frontmatter.date }
             author={ post.frontmatter.author }
             excerpt={ post.excerpt }
-            place={post.frontmatter.place}
-            id={index}
+            place={ post.frontmatter.place }
+            landmarks={ post.frontmatter.landmarks }
+            id={ index }
           />
         </article>
       ))}
@@ -33,12 +36,17 @@ export const pageQuery = graphql`
       posts: nodes {
         fields {
           slug
+          readingTime {
+            text
+          }
         }
         frontmatter {
           date(fromNow: true)
           title
+          subtitle
           author
           place
+          landmarks
         }
         excerpt
         id

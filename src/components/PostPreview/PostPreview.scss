@@ -1,4 +1,3 @@
-/*PEN STYLES*/
 
 * {
     box-sizing: border-box;
@@ -112,6 +111,7 @@
         line-height: 1;
         margin: 0;
         font-size: 1.7rem;
+        color: grey;
       }
       h2 {
         font-size: 1rem;
@@ -121,24 +121,17 @@
         margin-top: 5px;
       }
       .read-more {
+        display: flex;
+        justify-content: space-between;
         text-align: right;
+        span {
+          color: grey;
+        }
         a {
           color: $color_prime;
           display: inline-block;
           position: relative;
-          &:after {
-            content: "\f061";
-            font-family: FontAwesome;
-            margin-left: -10px;
-            opacity: 0;
-            vertical-align: middle;
-            transition: margin .3s, opacity .3s;
-          }
-  
-          &:hover:after {
-            margin-left: 5px;
-            opacity: 1;
-          }
+
         }
       }
     }

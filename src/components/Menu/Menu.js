@@ -7,7 +7,7 @@ export default function Menu(props) {
 
   return (
       <div className={ styles.topmenu }>
-        { props.headerData.map(el => <MenuItem posts={ el.nmbr } IconItem={ el.icon } name={ el.name } />) }
+        { props.headerData.map(el => <MenuItem posts={ el.count} IconItem={ el.icon } name={ el.name } />) }
         <Link className={ styles.link } to="/blog">
           <span>Read my blog</span>
         </Link>

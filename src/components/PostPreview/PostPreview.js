@@ -4,56 +4,75 @@ import styled from 'styled-components'
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill'
 import { DateRange } from '@styled-icons/material/DateRange'
 import { Place } from '@styled-icons/material-rounded/Place'
+import { Landmark } from  '@styled-icons/boxicons-solid/Landmark'
+import { ArrowRightShort } from  '@styled-icons/bootstrap/ArrowRightShort'
 import "./PostPreview.scss"
 
 export default function PostPreview(props) {
 
-  const isEven = (n) => (n + 1) % 2 == 0;
+    const isEven = (n) => (n + 1) % 2 == 0;
+    const READ_MORE = 'Read more';
 
-  const PersonFillStyled = styled(PersonFill)`
-    width: 32px;
-    height: 32px;
-    padding-right: 7px;
-  `
-  const DateRangeStyled = styled(DateRange)`
-    width: 32px;
-    height: 32px;
-    padding-right: 7px;
-  ` 
+    const PersonFillStyled = styled(PersonFill)`
+      width: 32px;
+      height: 32px;
+      padding-right: 7px;
+    `
+    const DateRangeStyled = styled(DateRange)`
+      width: 32px;
+      height: 32px;
+      padding-right: 7px;
+    ` 
 
- const PlaceStyled = styled(Place)`
-   width: 32px;
-   height: 32px;
-   padding-right: 7px;
- `
+    const PlaceStyled = styled(Place)`
+      width: 32px;
+      height: 32px;
+      padding-right: 7px;
+    `
 
-  return (
-      <div className={`blog-card ${isEven(props.id) ? "" : "alt"}`}>
+    const LandmarkStyled = styled(Landmark)`
+      width: 28px;
+      height: 28px;
+      padding-right: 7px;
+    `
+
+    const ArrowRightShortStyled = styled(ArrowRightShort)`
+      width: 24px;
+      height: 24px;
+    `
+
+    const { author, date, place, landmarks } = props;
+
+    const infoData = [
+      { icon: <PersonFillStyled />, text: author },
+      { icon: <DateRangeStyled />, text: date },
+      { icon: <PlaceStyled />, text: place },
+      { icon: <LandmarkStyled />, text: landmarks }
+    ]
+
+    return (
+      <div className={`blog-card ${ isEven(props.id) ? "" : "alt"}` }>
         <div className="meta">
           <div className="photo"></div>
           <ul className="details">
-            <div className="author">
-              <PersonFillStyled />
-              <div>{ props.author }</div>
-            </div>
-            <div className="date">
-              <DateRangeStyled />
-              <div>{ props.date }</div>
-            </div>
-            <div className="tags">
-              <PlaceStyled />
-              <div>{ props.place }</div>
-            </div>
+            { infoData.map(el => el.text && (
+              <div className="date">
+                { el.icon }
+                <div>{ el.text }</div>
+              </div>
+            ))}
           </ul>
         </div>
         <div className="description">
-          <h1 style={{color: 'grey'}}>{ props.title }</h1>
-          <h2>Sub title</h2>
+          <h1>{ props.title }</h1>
+          <h2>{ props.subtitle }</h2>
           <p>{ props.excerpt }</p>
           <p className="read-more">
-          <Link to={ props.slug }>
-                Read More
-          </Link>
+            <span>{ props.reading }</span>
+            <Link to={ props.slug }>
+              { READ_MORE }
+              <ArrowRightShortStyled />
+            </Link>
           </p>
         </div>
       </div>

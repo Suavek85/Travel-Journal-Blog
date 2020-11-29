@@ -34,7 +34,15 @@ module.exports = {
         display: 'swap'
       }
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-reading-time`,
+          // ...
+        ],
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`
   ],
