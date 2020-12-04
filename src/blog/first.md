@@ -1,10 +1,11 @@
 ---
-title: Awesome Blog Post Title
-subtitle: Another great adventure.
+title: Trip to Manilva
+subtitle: First July 2020 Adventure.
 author: Suavek
 date: 2020-07-15
 place: Manilva
 landmarks: Roman Baths, Food Shop
+start: 2020-07-15
 ---
 
 ## Introduction to my blog post. 

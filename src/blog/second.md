@@ -1,10 +1,10 @@
 ---
-title: Awesome Blog Post Title
-subtitle: Another great adventure.
+title: Trip to Marbella
+subtitle: Second August Adventure.
 author: Suavek
-date: 2020-07-22
+date: 2020-08-22
 place: Marbella, San Pedro
-landmarks: Old Church in Marbella, Wooden Bridge in San Pedro
+landmarks: Church in Marbella, Museum
 ---
 
 ## Introduction to my blog post. 

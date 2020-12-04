@@ -10,29 +10,34 @@ export default function Blog({ data }) {
   return (
     <div>
       <PostHeader />
-      {posts.map((post, index) => (
+      { posts.map((post, index) => {
+      
+      const props = {
+        slug: post.fields.slug,
+        reading: post.fields.readingTime.text,
+        title: post.frontmatter.title,
+        subtitle: post.frontmatter.subtitle,
+        date: post.frontmatter.date,
+        author: post.frontmatter.author,
+        excerpt: post.excerpt,
+        place: post.frontmatter.place,
+        landmarks: post.frontmatter.landmarks,
+        id: index,
+      }
+
+      return (
         <article key={ post.id }>
-          <PostPreview 
-            slug={ post.fields.slug } 
-            reading={ post.fields.readingTime.text } 
-            title={ post.frontmatter.title }
-            subtitle={ post.frontmatter.subtitle }
-            date={ post.frontmatter.date }
-            author={ post.frontmatter.author }
-            excerpt={ post.excerpt }
-            place={ post.frontmatter.place }
-            landmarks={ post.frontmatter.landmarks }
-            id={ index }
-          />
+          <PostPreview {...props} />
         </article>
-      ))}
+      )} 
+    )}
     </div>
   )
 }
 
 export const pageQuery = graphql`
   query MyQuery {
-    blog: allMarkdownRemark {
+    blog: allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}) {
       posts: nodes {
         fields {
           slug
@@ -47,6 +52,7 @@ export const pageQuery = graphql`
           author
           place
           landmarks
+          start
         }
         excerpt
         id

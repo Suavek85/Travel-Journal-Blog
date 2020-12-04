@@ -1,10 +1,10 @@
 ---
-title: Awesome Blog Post Title
-subtitle: Another great adventure.
+title: Trip to Malaga
+subtitle: Third October Adventure.
 author: Suavek
-date: 2020-08-15
+date: 2020-10-15
 place: Malaga
-landmarks: Picasso Museum
+landmarks: Picasso Museum, Castle
 ---
 
 ## Introduction to my blog post. 

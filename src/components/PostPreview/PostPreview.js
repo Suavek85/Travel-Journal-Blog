@@ -51,12 +51,12 @@ export default function PostPreview(props) {
     ]
 
     return (
-      <div className={`blog-card ${ isEven(props.id) ? "" : "alt"}` }>
-        <div className="meta">
+      <div className={`card ${ isEven(props.id) ? "" : "alt"}` }>
+        <div className="wrapper">
           <div className="photo"></div>
-          <ul className="details">
+          <ul className="content">
             { infoData.map(el => el.text && (
-              <div className="date">
+              <div className="content-item">
                 { el.icon }
                 <div>{ el.text }</div>
               </div>
