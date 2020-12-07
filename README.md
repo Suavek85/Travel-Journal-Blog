@@ -4,7 +4,9 @@ Gatsby.js template for a travelling blog.
 
 ## General info
 
-A simple template for a travelling blog which summarizes your visted Places, Landmarks and Days Passed since the travel has started. Plus a few small blog features.
+A simple template for a travelling blog. Tabs under the Menu summarize visted Places, Landmarks and Days Passed since the travel has started. Plus a few small blog features.
+
+State management done with React Context API.
 
 My own idea![🤓](https://mail.google.com/mail/e/1f913), created from scratch.[🔨](https://mail.google.com/mail/e/1f528)
 
