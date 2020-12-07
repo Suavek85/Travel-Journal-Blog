@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import PostHeader from "../components/PostHeader/PostHeader"
 import PostPreview from '../components/PostPreview/PostPreview'
 
@@ -33,3 +34,29 @@ export default function Blog({ data }) {
     </div>
   )
 }
+
+export const pageQuery = graphql`
+  query MyQuery {
+    blog: allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}) {
+      posts: nodes {
+        fields {
+          slug
+          readingTime {
+            text
+          }
+        }
+        frontmatter {
+          date(fromNow: true)
+          title
+          subtitle
+          author
+          place
+          landmarks
+          start
+        }
+        excerpt
+        id
+      }
+    }
+  }
+`

@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/Travel-Journal-Blog",
   siteMetadata: {
     title: 'Driving around Andalucia',
     description: 'Blog about family driving around Andalucia!'  
